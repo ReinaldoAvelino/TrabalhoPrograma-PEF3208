@@ -41,21 +41,28 @@ void interface() {
 	cout << "Software desenvolvido por Lucas Marques e Reinaldo Avelino durante a disciplina PEF3208." << endl;
 	cout << "========================================================================================" << endl;
 	
+	Estrutura* E = new Estrutura();
 	int opcao = -1;
 	while (opcao < 0 or opcao > 3) {
 		cout << "Menu de opcoes:" << endl;
 		     << "0) Encerrar;" << endl;
-		     << "1) Adicionar barra;" << endl;
-		     << "2) Adicionar apoio;" << endl;
+		     << "1) Adicionar barra;" << endl 
+		     << "2) Adicionar apoio;" << endl
 		     << "3) Adicionar carga;" << endl;
 		cout << "Digite o numero da opcao: ";
 		cin >> opcao;
-	}
-	
-	
+		switch (opcao) {
+			case 0: {delete E; break;}
+			case 1: {addBarra(E); break;}
+			case 2: {addApoio(E); break;}
+			case 3: {addCarga(E); break;}
+			default: cout << "Numero invalido" << endl; 
+		}
+	}	
 }
 
 int main() {
-	teste();
+	//teste();
+	interface();
 	return 0;
 }
