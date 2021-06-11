@@ -2,7 +2,45 @@
 #include <string>
 #include "GrafoDirigidoComMatriz.h"
 #include "ListaLigada.h"
+#include "Estrutura.h"
 using namespace std;
+	
+void addBarra(Estrutura* E) {
+	
+}
+
+void addApoio(Estrutura* E) {
+	
+}
+
+void addCarga(Estrutura* E) {
+	
+}
+
+void interface() {
+	cout << "PROGRAMA SOLUCIONADOR DE PROBLEMAS SIMPLES DE MECANICA DAS ESTRUTURAS" << end << endl;
+	cout << "Software desenvolvido por Lucas Marques e Reinaldo Avelino durante a disciplina PEF3208." << endl;
+	cout << "========================================================================================" << endl;
+	
+	Estrutura* E = new Estrutura();
+	int opcao = -1;
+	while (opcao < 0 or opcao > 3) {
+		cout << "Menu de opcoes:" << endl;
+		     << "0) Encerrar;" << endl;
+		     << "1) Adicionar barra;" << endl 
+		     << "2) Adicionar apoio;" << endl
+		     << "3) Adicionar carga;" << endl;
+		cout << "Digite o numero da opcao: ";
+		cin >> opcao;
+		switch (opcao) {
+			case 0: {delete E; break;}
+			case 1: {addBarra(E); break;}
+			case 2: {addApoio(E); break;}
+			case 3: {addCarga(E); break;}
+			default: cout << "Numero invalido. Tente novamente." << endl; 
+		}
+	}	
+}
 
 void teste() {
     /*
@@ -34,31 +72,6 @@ void teste() {
     	L->setInicio(x);
     	L->imprimir();
     	delete L;
-}
-
-void interface() {
-	cout << "PROGRAMA SOLUCIONADOR DE PROBLEMAS SIMPLES DE MECANICA DAS ESTRUTURAS" << end << endl;
-	cout << "Software desenvolvido por Lucas Marques e Reinaldo Avelino durante a disciplina PEF3208." << endl;
-	cout << "========================================================================================" << endl;
-	
-	Estrutura* E = new Estrutura();
-	int opcao = -1;
-	while (opcao < 0 or opcao > 3) {
-		cout << "Menu de opcoes:" << endl;
-		     << "0) Encerrar;" << endl;
-		     << "1) Adicionar barra;" << endl 
-		     << "2) Adicionar apoio;" << endl
-		     << "3) Adicionar carga;" << endl;
-		cout << "Digite o numero da opcao: ";
-		cin >> opcao;
-		switch (opcao) {
-			case 0: {delete E; break;}
-			case 1: {addBarra(E); break;}
-			case 2: {addApoio(E); break;}
-			case 3: {addCarga(E); break;}
-			default: cout << "Numero invalido" << endl; 
-		}
-	}	
 }
 
 int main() {
