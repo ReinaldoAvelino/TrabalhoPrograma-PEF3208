@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "GrafoDirigidoComMatriz.h"
 #include "ListaLigada.h"
 using namespace std;
@@ -30,9 +31,28 @@ void teste() {
 	x->setProximo(y);
 	y->setProximo(z);
 	ListaLigada* L = new ListaLigada();
-    L->setInicio(x);
-    L->imprimir();
-    delete L;
+    	L->setInicio(x);
+    	L->imprimir();
+    	delete L;
+}
+
+void interface() {
+	cout << "PROGRAMA SOLUCIONADOR DE PROBLEMAS SIMPLES DE MECANICA DAS ESTRUTURAS" << end << endl;
+	cout << "Software desenvolvido por Lucas Marques e Reinaldo Avelino durante a disciplina PEF3208." << endl;
+	cout << "========================================================================================" << endl;
+	
+	int opcao = -1;
+	while (opcao < 0 or opcao > 3) {
+		cout << "Menu de opcoes:" << endl;
+		     << "0) Encerrar;" << endl;
+		     << "1) Adicionar barra;" << endl;
+		     << "2) Adicionar apoio;" << endl;
+		     << "3) Adicionar carga;" << endl;
+		cout << "Digite o numero da opcao: ";
+		cin >> opcao;
+	}
+	
+	
 }
 
 int main() {
