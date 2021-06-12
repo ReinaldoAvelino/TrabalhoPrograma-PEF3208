@@ -10,8 +10,6 @@ public:
 	Vertice(char nome);
 	virtual ~Vertice();
 	char getNome();
-	bool conecta(Vertice* destino);
-	//void desconeta(Vertice* destino); // Nao sera necessario
 	int getNumeroDeArestrasDeSaida();
 protected:
 	char nome;
