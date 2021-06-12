@@ -3,8 +3,6 @@
 
 using namespace std;
 
-#define MAXIMO_ARESTAS 4 // maximo de arestas por vertice
-
 class Vertice {
 public:
 	Vertice(char nome);
@@ -13,7 +11,7 @@ public:
 	int getNumeroDeArestrasDeSaida();
 protected:
 	char nome;
-	Vertice* adjacentes[MAXIMO_ARESTAS];
+	Vertice* adjacentes[4];
 	int quantidade = 0;
 };
 
