@@ -11,15 +11,22 @@ void addBarra(Grafo* estrutura) {
              << "0) Retornar;" << endl
              << "1) Horizontal;" << endl
              << "2) Vertical;" << endl
-             << "3) Inclinada;" << endl << endl
-             << "Digite o numero da opcao:" << endl;
+             << "3) Inclinada;" << endl
+             << "Digite o numero da opcao: ";
         cin >> opcao;
 
         switch (opcao) {
             case 0: break;
 
             case 1: {
-                //
+                char nome[2];
+                cout << "Digite o nome da barra (Por exemplo: AB, CD): ";
+                cin >> nome;
+                estrutura->adicionar(nome[0]);
+                estrutura->adicionar(nome[1]);
+                estrutura->get(nome[0])->conecta(estrutura->get(nome[1]));
+
+
                 break;
             }
 
@@ -40,7 +47,7 @@ void addApoio(Grafo* estrutura) {
              << "0) Retornar;" << endl
              << "1) Articulacao Movel;" << endl
              << "2) Articulacao Fixa;" << endl
-             << "3) Engastamento;" << endl << endl
+             << "3) Engastamento;" << endl
              << "Digite o numero da opcao:" << endl;
         cin >> opcao;
         switch (opcao) {
@@ -72,7 +79,7 @@ void addCarga(Grafo* estrutura) {
         cout << "Tipos de carga:" << endl
              << "0) Retornar;" << endl
              << "1) Forca concentrada;" << endl
-             << "2) Forca distribuida;" << endl << endl
+             << "2) Forca distribuida;" << endl
              << "Digite o numero da opcao:" << endl;
         cin >> opcao;
 
@@ -95,7 +102,7 @@ void addCarga(Grafo* estrutura) {
 }
 
 void interface() {
-	cout << "PROGRAMA SOLUCIONADOR DE PROBLEMAS SIMPLES DE MECANICA DAS ESTRUTURAS" << end << endl;
+	cout << "PROGRAMA SOLUCIONADOR DE PROBLEMAS SIMPLES DE MECANICA DAS ESTRUTURAS" << endl << endl;
 	cout << "Software desenvolvido por Lucas Marques e Reinaldo Avelino durante a disciplina PEF3208." << endl;
 	cout << "========================================================================================" << endl;
 
@@ -106,7 +113,7 @@ void interface() {
 		     << "0) Encerrar programa;" << endl
 		     << "1) Adicionar barra;" << endl
 		     << "2) Adicionar apoio;" << endl
-		     << "3) Adicionar carga;" << endl << endl
+		     << "3) Adicionar carga;" << endl
 		     << "Digite o numero da opcao: ";
 		cin >> opcao;
 
@@ -118,7 +125,8 @@ void interface() {
 			default: cout << "Numero invalido. Tente novamente." << endl;
 		}
 	}
-	cout << "Encerrando o programa. Agradecemos pelo uso." << endl;
+	cout << endl;
+	cout << "Programa encerrado. Agradecemos pelo uso." << endl;
 	cout << "============================================" << endl;
 }
 
@@ -131,3 +139,4 @@ int main() {
 	interface();
 	return 0;
 }
+
