@@ -1,4 +1,5 @@
 #include "Grafo.h"
+#include <iostream>
 
 Grafo::Grafo()
 {
@@ -12,14 +13,18 @@ Grafo::~Grafo()
     }
 }
 
-Vertice* Grafo::adiciona(string nome) {
+bool Grafo::adicionar(char nome) {
+    if (numeroVertices == MAXIMO_VERTICES) return false;
+    for (int i = 0; i < numeroVertices; i++) {
+        if (vertices[i]->getNome() == nome) return false;
+    }
     vertices[numeroVertices++] = new Vertice(nome);
-    return vertices[numeroVertices-1];
+    return true;
 }
 
-Vertice* Grafo::get(string nome) {
+Vertice* Grafo::get(char nome) {
     for (int i = 0; i < numeroVertices; i++) {
-        if (vertices[i]->getNome().compare(nome) == 0) {
+        if (vertices[i]->getNome() == nome) {
             return vertices[i];
         }
     }
@@ -29,4 +34,9 @@ Vertice* Grafo::get(string nome) {
 int Grafo::getNumeroVertices()
 {
     return numeroVertices;
+}
+
+Vertice** Grafo::getVertices()
+{
+    return vertices;
 }
