@@ -1,8 +1,7 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 
-#include <string>
-#define MAXIMO_VERTICES
+#define MAXIMO_VERTICES 30
 
 #include "Vertice.h"
 
@@ -10,9 +9,10 @@ class Grafo {
 public:
 	Grafo();
 	virtual ~Grafo();
-	Vertice* adiciona(string nome);
-	Vertice* get(string nome);
+	bool adicionar(char nome);
+	Vertice* get(char nome);
 	int getNumeroVertices();
+	Vertice** getVertices();
 protected:
     int numeroVertices = 0;
     Vertice* vertices[MAXIMO_VERTICES];
