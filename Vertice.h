@@ -1,21 +1,22 @@
 #ifndef VERTICE_H
 #define VERTICE_H
 
-#include <string>
+using namespace std;
+
 #define MAXIMO_ARESTAS 4 // maximo de arestas por vertice
 
 class Vertice {
 public:
-	Vertice(string nome);
+	Vertice(char nome);
 	virtual ~Vertice();
-	string getNome();
-	void conecta(Vertice* destino);
+	char getNome();
+	bool conecta(Vertice* destino);
 	//void desconeta(Vertice* destino); // Nao sera necessario
 	int getNumeroDeArestrasDeSaida();
 protected:
-	string nome;
+	char nome;
 	Vertice* adjacentes[MAXIMO_ARESTAS];
 	int quantidade = 0;
-}
+};
 
 #endif // VERTICE_H
