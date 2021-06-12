@@ -1,6 +1,6 @@
 #include "Vertice.h"
 
-Vertice::Vertice(string nome) {
+Vertice::Vertice(char nome) {
 	this->nome = nome;
 }
 
@@ -8,16 +8,18 @@ Vertice::~Vertice() {
 	//dtor
 }
 
-string Vertice::getNome() {
+char Vertice::getNome() {
     return this->nome;
 }
 
-void Vertice::conecta(Vertice* destino) {
-    if (quantidade = MAXIMO_ARESTAS) return 0;
-    adjacentes[quantidade++] = destino;
-    return 1;
+bool Vertice::conecta(Vertice* destino) {
+    if (this->quantidade == MAXIMO_ARESTAS || destino->quantidade == MAXIMO_ARESTAS) return false;
+    this->adjacentes[this->quantidade++] = destino;
+    destino->adjacentes[destino->quantidade++] = this;
+    return true;
 }
 
 int Vertice::getNumeroDeArestrasDeSaida() {
     return quantidade;
 }
+
