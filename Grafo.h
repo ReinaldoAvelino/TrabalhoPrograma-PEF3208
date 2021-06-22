@@ -18,6 +18,8 @@ public:
 	Vertice** getVertices();
 	int getNumeroArestas();
 	Aresta** getArestas();
+	Vertice* getVertice(char nome); // Retorna NULL caso nao haja nenhum vertice com tal nome
+	Aresta* getAresta(char* nome); // Retorna NULL caso nao haja nenhuma aresta com tal nome
 protected:
     int numeroVertices = 0;
     Vertice* vertices[MAXIMO_VERTICES];
