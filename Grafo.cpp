@@ -1,5 +1,4 @@
 #include "Grafo.h"
-#include <iostream>
 
 Grafo::Grafo()
 {
@@ -54,4 +53,25 @@ Vertice** Grafo::getVertices()
 int Grafo::getNumeroArestas()
 {
     return numeroArestas;
+}
+
+Aresta** Grafo::getArestas()
+{
+    return arestas;
+}
+
+Vertice* Grafo::getVertice(char nome)
+{
+    for (int i = 0; i < numeroVertices; i++) {
+        if (vertices[i]->getNome() == nome) return vertices[i];
+    }
+    return NULL;
+}
+
+Aresta* Grafo::getAresta(char* nome)
+{
+    for (int i = 0; i < numeroArestas; i++) {
+        if (arestas[i]->getNome() == nome) return arestas[i];
+    }
+    return NULL;
 }
