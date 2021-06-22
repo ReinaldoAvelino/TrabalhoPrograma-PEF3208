@@ -2,6 +2,7 @@
 #include <string>
 
 #include "Grafo.h"
+
 using namespace std;
 
 void addBarra(Grafo* estrutura) {
@@ -11,7 +12,7 @@ void addBarra(Grafo* estrutura) {
              << "0) Retornar;" << endl
              << "1) Horizontal;" << endl
              << "2) Vertical;" << endl
-             << "3) Inclinada;" << endl
+             << "3) Inclinada (desabilitado);" << endl
              << "Digite o numero da opcao: ";
         cin >> opcao;
 
@@ -38,11 +39,14 @@ void addBarra(Grafo* estrutura) {
             }
 
             case 3: {
+		/*
                 float inclinacao;
                 cout << "Digite o angulo de inclinacao com o eixo x em graus (Utilize ponto): ";
                 cin >> inclinacao;
                 estrutura->adicionarAresta(nome, comprimento, inclinacao);
-                break;
+		*/
+		cout << "Recurso desabilitado. Tente novamente." << endl;
+		break;
             }
 
             default: {cout << "Numero invalido. Tente novamente." << endl; break;}
@@ -148,5 +152,4 @@ int main() {
 	//teste();
 	interface();
 	return 0;
-	int x;
 }
