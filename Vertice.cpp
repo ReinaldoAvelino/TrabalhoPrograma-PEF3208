@@ -16,3 +16,16 @@ int Vertice::getNumeroDeArestrasDeSaida() {
     return quantidade;
 }
 
+bool Vertice::addForca(double intensidade, char direcao)
+{
+    if (direcao == 'i') {
+        forcas[0] += intensidade; // forcas na direcao i
+        return true;
+    }
+    else if (direcao == 'j') {
+        forcas[1] += intensidade; // forcas na direcao j
+        return true;
+    }
+    return false;
+}
+
